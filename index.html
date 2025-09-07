@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ForYou Store - Komunitas Discord Genshin Impact</title>
+  <!-- Google Fonts: Cinzel (fantasy, elegan) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: 'Cinzel', serif;
+      color: #f0e6d2;
+      background: url('https://wallpapercave.com/wp/wp9550687.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+      opacity: 0; animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    body::before {
+      content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 25, 40, 0.6); z-index: -1;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; position: sticky; top: 0;
+      background: rgba(10, 25, 40, 0.85); z-index: 1000;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    .logo {
+      font-size: 2rem; font-weight: 700; color: #f5d76e;
+      text-shadow: 0 0 5px #f5d76e, 0 0 10px #f5d76e, 0 0 20px #f5d76e;
+    }
+    nav { display: flex; align-items: center; gap: 25px; }
+    nav a {
+      color: #f0e6d2; text-decoration: none; font-weight: 600; font-size: 1rem;
+      position: relative; padding: 5px 0; transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: ""; position: absolute; width: 0; height: 2px; bottom: 0; left: 0;
+      background: #f5d76e; transition: width 0.3s ease; border-radius: 2px;
+    }
+    nav a:hover { color: #f5d76e; }
+    nav a:hover::after { width: 100%; }
+    .btn-join {
+      background: linear-gradient(45deg, #f5d76e, #d4af37);
+      border: none; padding: 10px 20px; border-radius: 25px;
+      font-weight: 700; color: #1a1a1a; cursor: pointer;
+      box-shadow: 0 0 8px #f5d76e, 0 0 15px #d4af37;
+    }
+    .hero {
+      min-height: calc(100vh - 80px); display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 0 20px 60px 20px; max-width: 700px;
+    }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 15px; color: #f5d76e; }
+    .hero p { font-size: 1.25rem; margin-bottom: 40px; color: #f0e6d2; }
+    .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+    .btn-primary, .btn-secondary {
+      padding: 15px 30px; border-radius: 30px; font-weight: 700; font-size: 1.1rem;
+      cursor: pointer; border: none; text-decoration: none; display: inline-flex; align-items: center;
+    }
+    .btn-primary { background-color: #3b82f6; color: #e0e7ff; }
+    .btn-secondary { background: linear-gradient(45deg, #f5d76e, #d4af37); color: #1a1a1a; }
+    .nav-toggle { display: none; }
+    @media (max-width: 768px) {
+      nav {
+        position: fixed; top: 80px; right: 0; background: rgba(10,25,40,0.95);
+        height: calc(100vh - 80px); width: 220px; flex-direction: column;
+        padding: 30px 20px; gap: 30px; transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+      nav.open { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="logo">ForYou Store</div>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <a href="https://discord.gg/qX59yhwA6p" target="_blank">Channel Store</a>
+      <a href="https://wa.me/c/6285693946079" target="_blank">Produk</a>
+      <a href="https://wa.me/6285693946079" target="_blank">Top Donatur</a>
+      <a href="https://wa.me/6285693946079" target="_blank">Galeri Member</a>
+      <a href="https://wa.me/6285693946079" target="_blank">Testimoni</a>
+      <button class="btn-join" onclick="window.open('https://discord.gg/qX59yhwA6p')">Bergabung</button>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <h1>Selamat Datang di ForYou Store</h1>
+      <p>Komunitas Discord ForYou Store dalam suasana Genshin Impact.</p>
+      <p>Follow TikTok: <a href="https://www.tiktok.com/@foryou.joki" target="_blank">@foryou.joki</a></p>
+      <div class="hero-buttons">
+        <a href="https://discord.gg/qX59yhwA6p" target="_blank" class="btn-primary">Jelajahi Server</a>
+        <button class="btn-secondary" onclick="window.open('https://trakteer.id/ace_gaming5')">Donasi</button>
+      </div>
+    </section>
+  </main>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
